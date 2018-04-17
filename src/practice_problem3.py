@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 3.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Ryan Walter.
+"""  # T: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -64,7 +64,7 @@ def is_prime(n):
     return True
     # ------------------------------------------------------------------
     # Students:
-    #   Do NOT touch the above  is_prime  function - it has no TODO.
+    #   Do NOT touch the above  is_prime  function - it has no .
     #   Do NOT copy code from this function.
     #
     # Instead, ** CALL ** this function as needed in the problems below.
@@ -156,13 +156,22 @@ def practice_problem3a(circles):
       :type sequence: [rg.Circle]
     """
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
+
+    total = 1
+    for k in range(len(circles)):
+        if circles == []:
+            return 1
+        else:
+            total = total * circles[k].center.x
+    return total
+
 
 
 def run_test_practice_problem3b():
@@ -266,7 +275,7 @@ def practice_problem3b(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -279,6 +288,10 @@ def practice_problem3b(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
 
+    for k in range(len(sequence)-1):
+        if sequence[-1] == sequence[k]:
+            return True
+    return False
 
 def run_test_practice_problem3c():
     """ Tests the    practice_problem3c    function. """
@@ -354,7 +367,7 @@ def practice_problem3c(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # : 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -362,6 +375,11 @@ def practice_problem3c(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
 
+    total = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            total = total + [k]
+    return total
 
 def run_test_practice_problem3d():
     """ Tests the    practice_problem3d    function. """
@@ -436,7 +454,7 @@ def practice_problem3d(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # TO: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -444,23 +462,32 @@ def practice_problem3d(sequence):
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
 
+    for k in range (len(sequence)):
+        if sequence[k] == 0:
+            return k
+    return -1
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    # TO: 6. Just ABOVE this TO, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
-    #       -- Your FIRST solution (ABOVE this TODO)
+    #       -- Your FIRST solution (ABOVE this TO)
     #            should be a solution that IGNORES
     #              practice_problem3c (the previous problem).
     #
-    #       -- Your SECOND solution (BELOW this TODO)
+    #       -- Your SECOND solution (BELOW this TO)
     #            should be a solution that USES (calls)
     #              practice_problem3c.
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
 
+    if practice_problem3c(sequence) == []:
+        return -1
+    else:
+        stuff = [] + practice_problem3c(sequence)
+    return stuff[0]
 
 def run_test_practice_problem3e():
     """ Tests the    practice_problem3e    function. """
@@ -522,7 +549,7 @@ def practice_problem3e(sequence):
       :type sequence: list(float)    or tuple(float)
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # TO: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -530,6 +557,10 @@ def practice_problem3e(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
 
+    total = 0
+    for k in range(0,len(sequence),2):
+        total+= sequence[k]
+    return total
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
